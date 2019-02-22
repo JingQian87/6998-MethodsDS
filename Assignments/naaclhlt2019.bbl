@@ -1,0 +1,53 @@
+\begin{thebibliography}{8}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Abeysekera and Dawson(2015)}]{Abeysekera:2015}
+Lakmal Abeysekera and Phillip Dawson. 2015.
+\newblock Motivation and cognitive load in the flipped classroom: definition,
+  rationale and a call for research.
+\newblock \emph{Higher Education Research \& Development}, 34.
+
+\bibitem[{Blair et~al.(2016)Blair, Maharaj, and Primus}]{Blair:2016}
+Erik Blair, Chris Maharaj, and Simone Primus. 2016.
+\newblock Performance and perception in the flipped classroom.
+\newblock \emph{Education and Information Technologies}, 21(1465–1482).
+
+\bibitem[{Boevé et~al.(2017)Boevé, Meijer, and Bosker}]{Boevé:2016}
+A.~J. Boevé, R.~R. Meijer, and R.~J. Bosker. 2017.
+\newblock Implementing the flipped classroom: an exploration of study behaviour
+  and student performance.
+\newblock \emph{Higher Education}, 74(1015–1032).
+
+\bibitem[{DeLozier and Rhodes(2016)}]{DeLozier:2016}
+S.~J. DeLozier and M.~G. Rhodes. 2016.
+\newblock Flipped classrooms: a review of key ideas and recommendations for
+  practice.
+\newblock \emph{Educ Psychol Rev}, 29.
+
+\bibitem[{Gündüz and Akkoyunlu(2019)}]{Gündüz:2019}
+Abdullah~Yasin Gündüz and Buket Akkoyunlu. 2019.
+\newblock Student views on the use of flipped learning in higher education: A
+  pilot study.
+\newblock \emph{Education and Information Technologies}, 74(1-11).
+
+\bibitem[{Kurtz et~al.(2014)Kurtz, Tsimerman, and Steiner-Lavi}]{Kurtz:2014}
+Gila Kurtz, Alexandr Tsimerman, and Orna Steiner-Lavi. 2014.
+\newblock The flipped-classroom approach: The answer to future learning?
+\newblock \emph{European Journal of Open, Distance and E-Learning}, 17(2):172
+  -- 182.
+
+\bibitem[{Nouri(2016)}]{Nouri:2016}
+Jalal Nouri. 2016.
+\newblock The flipped classroom: for active, effective and increased learning -
+  especially for low achievers.
+\newblock \emph{International Journal of Educational Technology in Higher
+  Education}, 13(33).
+
+\bibitem[{Thai et~al.(2017)Thai, Wever, and Valcke}]{Thai:2017}
+Ngoc Thuy~Thi Thai, Bram~De Wever, and Martin Valcke. 2017.
+\newblock The impact of a flipped classroom design on learning performance in
+  higher education: Looking for the best blend of lectures and guiding
+  questions with feedback.
+\newblock \emph{Computers \& Education}, 107:113 -- 126.
+
+\end{thebibliography}
