@@ -1,0 +1,66 @@
+---
+title: "R Practice"
+date: "April 3"
+output: html_notebook
+---
+
+## Visualizing -> general patterns
+Visually look at mean, median, mode, standard deviation
+
+### Graphs: 
+#### Boxplot:
+Distribution of dataset (categorical and continuous data).<br>
+Median, range, quartiles, whiskers.<br>
+
+Good for clearly seeing outliers:<br>
+IQR = Q3-Q1 (就是25%～75%对应的range) <br>
+认为outlier是：> Q3+1.5IQR 或 < Q1-1.5IQR
+
+
+#### Histogram: 
+Continuous, show frequency
+
+#### Scatterplot:
+
+#### Barchart
+
+## Practice on the drug overdose excel
+```{r}
+library('readxl')
+a = read_excel("table011.xlsx")
+```
+
+```{r}
+a
+```
+
+
+
+```{r}
+boxplot(a~)
+```
+
+
+
+
+```{r}
+library("ggplot2")
+ggplot(data = a, mapping = aes(x = a$race, y=a$Infant))+geom_boxplot()+coord_flip()
+```
+
+```{r}
+hist(a$Infant)
+```
+
+```{r}
+ggplot(data = a, mapping = aes(x = a$race, y=a$Infant))+geom_point()+geom_abline()
+```
+
+```{r}
+plot(factor(a$race), a$Infant)
+```
+```{r}
+library(car)
+scatterplot(a$Infant~a$`Race and year`)
+```
+

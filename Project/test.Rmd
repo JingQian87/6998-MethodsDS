@@ -1,0 +1,19 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+
+```{r}
+library(readr)
+a = read_file("~/Desktop/EmpiricalMethodsDS/Project/cornell movie-dialogs corpus/movie_titles_metadata.txt")
+```
+
+
+## t
+```{r}
+
+```
+
+
