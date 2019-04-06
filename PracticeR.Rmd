@@ -17,6 +17,7 @@ IQR = Q3-Q1 (就是25%～75%对应的range) <br>
 认为outlier是：> Q3+1.5IQR 或 < Q1-1.5IQR
 
 
+
 #### Histogram: 
 Continuous, show frequency
 
