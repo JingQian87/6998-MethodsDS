@@ -1,8 +1,10 @@
 ---
 title: "Empirical Methods of Data Science"
-subtitle: "Assignment: Data analysis of infant mortality rates"
 author: "Amal Alabdulkarim (aa4235), Jing Qian (jq2282)"
-output: html_notebook
+subtitle: 'Assignment: Data analysis of infant mortality rates'
+output:
+  pdf_document: default
+  html_notebook: default
 ---
 
 ## Step 1. Load data
@@ -23,7 +25,6 @@ So the infant death number = the neonatal death number + the postneonatal death.
 ## Step 2: Data exporation
 ### 2.1. Difference in Mortality rate due to the age of infants
 First, let's look at the mortality rate of infants in different age.
-<font color='red'>Should use different description other than "age"?</font>
 ```{r}
 library("ggplot2")
 a = data.frame(group="Infant",value=data$Infant)
@@ -49,7 +50,7 @@ From the boxplot of infant mortality rate of different races, we could find that
 3) The death rate of black or African American infants is the highest among the five race groups and has the widest expansion. 
 
 It is reasonable to suggest there might be some correlation between the race of mother and that of child. 
-The lare difference between the death rate of black or African American infants and that of infants with black or African American mothers seems a little weird.
+The large difference between the death rate of black or African American infants and that of infants with black or African American mothers seems a little weird.
 This may due to the fact that data of different race groups are collected in different years.
 
 ### 2.3. Difference in Mortality rate due to time
