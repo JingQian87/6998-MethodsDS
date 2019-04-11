@@ -1,0 +1,333 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Empirical Methods of Data Science},
+            pdfauthor={Amal Alabdulkarim (aa4235), Jing Qian (jq2282)},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Empirical Methods of Data Science}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \subtitle{Assignment: Data analysis of infant mortality rates}
+  \author{Amal Alabdulkarim (aa4235), Jing Qian (jq2282)}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+    \date{}
+    \predate{}\postdate{}
+  
+
+\begin{document}
+\maketitle
+
+\hypertarget{april-10.-new-findings}{%
+\subsection{April 10. New findings}\label{april-10.-new-findings}}
+
+在各种年龄的婴儿的死亡率之后，应该算下这些之间的correlation
+（或者之后）。这样就说明了之后对于infant的结果（race,
+year）可以适用于中间的细节～
+
+\hypertarget{step-1.-load-data}{%
+\subsection{Step 1. Load data}\label{step-1.-load-data}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(}\StringTok{'readxl'}\NormalTok{)}
+\NormalTok{data =}\StringTok{ }\KeywordTok{read_excel}\NormalTok{(}\StringTok{"table011.xlsx"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in strptime(x, format, tz = tz): unknown timezone 'zone/tz/2018i.
+## 1.0/zoneinfo/America/New_York'
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{names}\NormalTok{(data)[}\DecValTok{2}\NormalTok{]<-}\StringTok{"Year"}
+\KeywordTok{View}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+In this table, infant mortality rates are shown in different races and
+years. Five levels of races are discussed: all races, race of child is
+white, race of mother is white, race of child is black or African
+American and race of mother is black or African American. The time span
+of the data is from 1950 to 2016. The mortality rates are shown in four
+catetories: infant, neonatal under 28 days, neonatol under 7 days and
+postneonatal. \footnote{Infant (aged \textless{} 1 year), neonatal (aged
+  \textless{} 28 days), postneonatal (aged 28 days to 11 months). So the
+  infant death number = the neonatal death number + the postneonatal
+  death.}
+
+\hypertarget{step-2-data-exporation}{%
+\subsection{Step 2: Data exporation}\label{step-2-data-exporation}}
+
+\hypertarget{difference-in-mortality-rate-due-to-the-age-of-infants}{%
+\subsubsection{2.1. Difference in Mortality rate due to the age of
+infants}\label{difference-in-mortality-rate-due-to-the-age-of-infants}}
+
+First, let's look at the mortality rate of infants in different age.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: replacing previous import by 'rlang::dots_n' when loading 'dplyr'
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a =}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{group=}\StringTok{"Infant"}\NormalTok{,}\DataTypeTok{value=}\NormalTok{data}\OperatorTok{$}\NormalTok{Infant)}
+\NormalTok{b =}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{group=}\StringTok{"Postneonatal"}\NormalTok{, }\DataTypeTok{value=}\NormalTok{data}\OperatorTok{$}\NormalTok{Postneonatal)}
+\NormalTok{c =}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{group=}\StringTok{"Neonatal Under 28 days"}\NormalTok{, }\DataTypeTok{value=}\NormalTok{data}\OperatorTok{$}\StringTok{`}\DataTypeTok{Neonatal1 Under 28 days}\StringTok{`}\NormalTok{)}
+\NormalTok{d =}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{group=}\StringTok{"Neonatal Under 7 days"}\NormalTok{, }\DataTypeTok{value=}\NormalTok{data}\OperatorTok{$}\StringTok{`}\DataTypeTok{Neonatal1 Under 7 days}\StringTok{`}\NormalTok{)}
+\NormalTok{plotdata =}\StringTok{ }\KeywordTok{rbind}\NormalTok{(d,c,b,a)}
+\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ plotdata, }\DataTypeTok{mapping =} \KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\NormalTok{group,}\DataTypeTok{y=}\NormalTok{value))}\OperatorTok{+}\KeywordTok{geom_boxplot}\NormalTok{()}\OperatorTok{+}\KeywordTok{coord_flip}\NormalTok{()}\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{title=}\StringTok{"Infant mortality rate of different age groups"}\NormalTok{,}\DataTypeTok{y=}\StringTok{"Deaths per 1,000 live births"}\NormalTok{, }\DataTypeTok{x =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assignment-DataAnalysis_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Or use following boxplot command:}
+\CommentTok{#boxplot(data$Infant, data$`Neonatal1 Under 28 days`, data$`Neonatal1 Under 7 days`, data$Postneonatal, names = c("Infant", "Neonatal1 Under 28 days","Neonatal1 Under 7 days","Postneonatal"),horizontal=TRUE,las=2, ylab = "Deaths per 1,000 live births")}
+\end{Highlighting}
+\end{Shaded}
+
+From the boxplot of infant mortality rate above, we could see that the
+death rate of postneonatals has smaller value and narrower distribution
+than that of neonatals.
+
+\hypertarget{difference-in-mortality-rate-due-to-race}{%
+\subsubsection{2.2. Difference in Mortality rate due to
+race}\label{difference-in-mortality-rate-due-to-race}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ data, }\DataTypeTok{mapping =} \KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ data}\OperatorTok{$}\NormalTok{race, }\DataTypeTok{y=}\NormalTok{data}\OperatorTok{$}\NormalTok{Infant))}\OperatorTok{+}\KeywordTok{geom_boxplot}\NormalTok{()}\OperatorTok{+}\KeywordTok{coord_flip}\NormalTok{()}\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{title=}\StringTok{"Infant mortality rate of different races"}\NormalTok{,}\DataTypeTok{y=}\StringTok{"Deaths per 1,000 live births"}\NormalTok{, }\DataTypeTok{x =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assignment-DataAnalysis_files/figure-latex/unnamed-chunk-3-1.pdf}
+From the boxplot of infant mortality rate of different races, we could
+find that: 1) The white infants have lower death rate than black or
+African American infants. 2) The infants born by white mothers have
+lower death rate than that by black or African American mothers. 3) The
+death rate of black or African American infants is the highest among the
+five race groups and has the widest expansion.
+
+It is reasonable to suggest there might be some correlation between the
+race of mother and that of child. The large difference between the death
+rate of black or African American infants and that of infants with black
+or African American mothers seems a little weird. This may due to the
+fact that data of different race groups are collected in different
+years.
+
+\hypertarget{difference-in-mortality-rate-due-to-time}{%
+\subsubsection{2.3. Difference in Mortality rate due to
+time}\label{difference-in-mortality-rate-due-to-time}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ggplot}\NormalTok{(data, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\NormalTok{Year, }\DataTypeTok{y=}\NormalTok{Infant, }\DataTypeTok{shape=}\NormalTok{race, }\DataTypeTok{color=}\NormalTok{race)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{()}\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{title=}\StringTok{"Infant mortality rate trend"}\NormalTok{,}\DataTypeTok{y=}\StringTok{"Deaths per 1,000 live births"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assignment-DataAnalysis_files/figure-latex/unnamed-chunk-4-1.pdf}
+From the scatter plot above, we could see that the infant mortality rate
+decreases with time and the decrease trend becomes flatter with time.
+And the trend is similar for different races while the infant mortality
+rate of white mother (or child) is less than that of black or African
+American mother (or child).
+
+\hypertarget{infant-mortality-rate-correlation-between-different-races}{%
+\subsubsection{2.4. Infant mortality rate correlation between different
+races}\label{infant-mortality-rate-correlation-between-different-races}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{cor.test}\NormalTok{(data[data}\OperatorTok{$}\NormalTok{race}\OperatorTok{==}\StringTok{'Race of mother White'}\NormalTok{,]}\OperatorTok{$}\NormalTok{Infant, data[data}\OperatorTok{$}\NormalTok{race}\OperatorTok{==}\StringTok{'Race of mother Black or African American'}\NormalTok{,]}\OperatorTok{$}\NormalTok{Infant)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Pearson's product-moment correlation
+## 
+## data:  data[data$race == "Race of mother White", ]$Infant and data[data$race == "Race of mother Black or African American", data[data$race == "Race of mother White", ]$Infant and     ]$Infant
+## t = 24.7592, df = 35, p-value < 2.2e-16
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  0.9470662 0.9859267
+## sample estimates:
+##       cor 
+## 0.9726198
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{cor.test}\NormalTok{(data[(data}\OperatorTok{$}\NormalTok{race}\OperatorTok{==}\StringTok{'All races'}\NormalTok{) }\OperatorTok{&}\StringTok{ }\NormalTok{(data}\OperatorTok{$}\NormalTok{Year}\OperatorTok{>}\DecValTok{1979}\NormalTok{) ,]}\OperatorTok{$}\NormalTok{Infant, data[data}\OperatorTok{$}\NormalTok{race}\OperatorTok{==}\StringTok{'Race of mother Black or African American'}\NormalTok{,]}\OperatorTok{$}\NormalTok{Infant)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Pearson's product-moment correlation
+## 
+## data:  data[(data$race == "All races") & (data$Year > 1979), ]$Infant and data[data$race == "Race of mother Black or African American", data[(data$race == "All races") & (data$Year > 1979), ]$Infant and     ]$Infant
+## t = 33.0071, df = 35, p-value < 2.2e-16
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  0.9695058 0.9919607
+## sample estimates:
+##       cor 
+## 0.9843141
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{cor.test}\NormalTok{(data[data}\OperatorTok{$}\NormalTok{race}\OperatorTok{==}\StringTok{'Race of child White'}\NormalTok{,]}\OperatorTok{$}\NormalTok{Infant, data[data}\OperatorTok{$}\NormalTok{race}\OperatorTok{==}\StringTok{'Race of child Black or African American'}\NormalTok{,]}\OperatorTok{$}\NormalTok{Infant)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Pearson's product-moment correlation
+## 
+## data:  data[data$race == "Race of child White", ]$Infant and data[data$race == "Race of child Black or African American", data[data$race == "Race of child White", ]$Infant and     ]$Infant
+## t = 5.5312, df = 2, p-value = 0.03117
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  0.1124995 0.9993720
+## sample estimates:
+##       cor 
+## 0.9688344
+\end{verbatim}
+
+In this part, we examine the correlation between infant mortality rate
+of different races: race of mother white vs.~race of mother black or
+African American, race of mother white vs.~all races, race of child
+white vs.~race of child black or African American. From the result
+above, we could see that all three correlations are significant and
+high, almost linear. This correlation result agrees with the trend plot
+we have in Part 2.3.
+
+
+\end{document}

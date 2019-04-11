@@ -6,6 +6,8 @@ output:
   pdf_document: default
   html_notebook: default
 ---
+## April 10. New findings
+在各种年龄的婴儿的死亡率之后，应该算下这些之间的correlation （或者之后）。这样就说明了之后对于infant的结果（race, year）可以适用于中间的细节～
 
 ## Step 1. Load data
 ```{r}
