@@ -1764,12 +1764,17 @@ $(document).ready(function () {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyZWFkcilcbmEgPSByZWFkX2ZpbGUoXCJ+L0Rlc2t0b3AvRW1waXJpY2FsTWV0aG9kc0RTL1Byb2plY3QvY29ybmVsbCBtb3ZpZS1kaWFsb2dzIGNvcnB1cy9tb3ZpZV90aXRsZXNfbWV0YWRhdGEudHh0XCIpXG5gYGAifQ== -->
-<pre class="r"><code>library(readr)
-a = read_file(&quot;~/Desktop/EmpiricalMethodsDS/Project/cornell movie-dialogs corpus/movie_titles_metadata.txt&quot;)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYSA9IHJlYWQudGFibGUoXCJ+L0Rlc2t0b3AvRW1waXJpY2FsTWV0aG9kc0RTL1Byb2plY3QvY29ybmVsbCBtb3ZpZS1kaWFsb2dzIGNvcnB1cy9tb3ZpZV90aXRsZXNfbWV0YWRhdGEudHh0XCIsIHNlcD1cIisrKyQrKytcIilcblxuYGBgIn0= -->
+<pre class="r"><code>a = read.table(&quot;~/Desktop/EmpiricalMethodsDS/Project/cornell movie-dialogs corpus/movie_titles_metadata.txt&quot;, sep=&quot;+++$+++&quot;)
+</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoi6ZSZ6K+v5LqOc2NhbihmaWxlLCB3aGF0ID0gXCJcIiwgc2VwID0gc2VwLCBxdW90ZSA9IHF1b3RlLCBubGluZXMgPSAxLCBxdWlldCA9IFRSVUUsICA6IFxuICAnc2VwJ+WAvOS4jeWvuTog5aSn5bCP5Y+q6IO95Li65LiA5oucXG4ifQ== -->
+<pre><code>错误于scan(file, what = &quot;&quot;, sep = sep, quote = quote, nlines = 1, quiet = TRUE,  : 
+  &#39;sep&#39;值不对: 大小只能为一拜</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>只能read_file，但没有区分。read.table不让一字节以上的sep</p>
 <div id="t" class="section level2">
 <h2>t</h2>
 <!-- rnb-text-end -->
@@ -1779,7 +1784,7 @@ a = read_file(&quot;~/Desktop/EmpiricalMethodsDS/Project/cornell movie-dialogs c
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKCgpgYGB7cn0KbGlicmFyeShyZWFkcikKYSA9IHJlYWRfZmlsZSgifi9EZXNrdG9wL0VtcGlyaWNhbE1ldGhvZHNEUy9Qcm9qZWN0L2Nvcm5lbGwgbW92aWUtZGlhbG9ncyBjb3JwdXMvbW92aWVfdGl0bGVzX21ldGFkYXRhLnR4dCIpCmBgYAoKCiMjIHQKYGBge3J9CgpgYGAKCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKCgpgYGB7cn0KbGlicmFyeShyZWFkcikKYSA9IHJlYWQudGFibGUoIn4vRGVza3RvcC9FbXBpcmljYWxNZXRob2RzRFMvUHJvamVjdC9jb3JuZWxsIG1vdmllLWRpYWxvZ3MgY29ycHVzL21vdmllX3RpdGxlc19tZXRhZGF0YS50eHQiLCBzZXA9IisrKyQrKysiKQpgYGAK5Y+q6IO9cmVhZF9maWxl77yM5L2G5rKh5pyJ5Yy65YiG44CCcmVhZC50YWJsZeS4jeiuqeS4gOWtl+iKguS7peS4iueahHNlcAoKIyMgdApgYGB7cn0KCmBgYAoKCg==</div>
 
 
 

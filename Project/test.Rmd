@@ -7,9 +7,9 @@ output: html_notebook
 
 ```{r}
 library(readr)
-a = read_file("~/Desktop/EmpiricalMethodsDS/Project/cornell movie-dialogs corpus/movie_titles_metadata.txt")
+a = read.table("~/Desktop/EmpiricalMethodsDS/Project/cornell movie-dialogs corpus/movie_titles_metadata.txt", sep="+++$+++")
 ```
-
+只能read_file，但没有区分。read.table不让一字节以上的sep
 
 ## t
 ```{r}
