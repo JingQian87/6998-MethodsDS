@@ -2,12 +2,18 @@
 
 #### Dataset
 
-![屏幕快照 2019-05-03 下午8.06.57](/Users/mac/Desktop/EmpiricalMethodsDS/Project/Draft/屏幕快照 2019-05-03 下午8.06.57.png)
+In this paper,  we used the Cornell Movie Dialogs Corpus\cite{Danescu-Niculescu-Mizil2011ChameleonsDialogs}. This corpus contains a large metadata-rich collection of fictional conversations extracted from raw movie scripts, including movie metadata (genres, release year, IMDB rating, etc), character metadata (character name, gender, movie, etc) and conversation metadata. 
 
-30% lines by female characters.
-70% lines by male characters.
+Because our hypotheses are gender-related, we extracted only the dialogues from characters that with gender labeled. The information regarding the data we analysed in this paer is shown as following: 
 
-mention the chameloen paper?
+| Years             | 1930-2009 |
+| ----------------- | --------- |
+| Female Characters | 966       |
+| Male Characters   | 2049      |
+| Utterances        | 242023    |
+| Movies            | 600       |
+
+We could see that the number of identified male characters is about twice as that of female characters, which should be kept in mind when doing later difference analysis between genders.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -15,7 +21,7 @@ mention the chameloen paper?
 
 ![屏幕快照 2019-05-03 下午8.10.36](/Users/mac/Desktop/EmpiricalMethodsDS/Project/Draft/屏幕快照 2019-05-03 下午8.10.36.png)
 
-Skewed towards recent years
+<font color='red'>纵坐标有问题</font>Skewed towards recent years
 
 %%%%%%%%%%%%%%%%%%%%
 
@@ -23,7 +29,13 @@ Skewed towards recent years
 
 ![屏幕快照 2019-05-03 下午8.10.46](/Users/mac/Desktop/EmpiricalMethodsDS/Project/Draft/屏幕快照 2019-05-03 下午8.10.46.png)
 
-One movie is labeled with multiple genres
+We also showed the genre distribution of the 600 movies we analysed in Fig <font color='red'>图片引用</font> . One should know that one movie may be classified to multiple genres, like the movie *2001: a space odyssey* was labeled as 'adventure', 'mystery' and 'sci-fi'. 
+
+We could see from the plot that the genre distribution of movies was highly uneven. The top three  genres with highest number of movies are drama, thriller and comedy, in which drama has over 300 movies, more than half of the total movies. The least three are adult, documentary and short, each of which has less than 10 movies. 
+
+When discussing the female characters in different genre and period in the following sections, the readers should notice that results of some genres and years are based on relatively small number of movies.
+
+
 
 %%%%%%%%%%%%%%%%%%%
 
