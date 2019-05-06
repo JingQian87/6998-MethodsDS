@@ -19,15 +19,13 @@ We could see that the number of identified male characters is about twice as tha
 
 #### Year Distribution 
 
-![屏幕快照 2019-05-03 下午8.10.36](/Users/mac/Desktop/EmpiricalMethodsDS/Project/Draft/屏幕快照 2019-05-03 下午8.10.36.png)
-
 <font color='red'>纵坐标有问题</font>Skewed towards recent years
 
 %%%%%%%%%%%%%%%%%%%%
 
 #### Genre Distribution
 
-![屏幕快照 2019-05-03 下午8.10.46](/Users/mac/Desktop/EmpiricalMethodsDS/Project/Draft/屏幕快照 2019-05-03 下午8.10.46.png)
+![](/Users/mac/Desktop/EmpiricalMethodsDS/Project/Draft/genre_dist.png)
 
 We also showed the genre distribution of the 600 movies we analysed in Fig <font color='red'>图片引用</font> . One should know that one movie may be classified to multiple genres, like the movie *2001: a space odyssey* was labeled as 'adventure', 'mystery' and 'sci-fi'. 
 
@@ -35,55 +33,47 @@ We could see from the plot that the genre distribution of movies was highly unev
 
 When discussing the female characters in different genre and period in the following sections, the readers should notice that results of some genres and years are based on relatively small number of movies.
 
-
+<font color='red'>男女角色数量自己本身的分布？</font>
 
 %%%%%%%%%%%%%%%%%%%
 
 ### Hypo 2
 
-(slide) Our second hypothesis is female characters have higher importance in specific genres, like romance and drama.
+In this section, we examined the importance of female character roles in movie dialogues and how this importance varied from genre to genre. So our first hypotheis is: Female characters have a higher importance in specific genre.
 
-Here we discuss importance in two aspects: length of dialogue and role in conversation.
+There are various ways to evaluate whether female characters are important in the movies: like showing gender distribution\cite{Neville2018FewerFilms} or comparing speaking time of different genders \cite{Glascock2001GenderTelevision}.  Here we discussed importance of female characters from dialogue corpus in two aspects: dialogue length and the role in conversation.
 
+#### 2.1 Females tend to have more lines in dramatic and romantic movies and fewer lines in other genres than male characters.
 
+In this sub-hypothesis, we defined the dialogue length as the number of lines in one movie \footnote{We also checked the definition as number of words and got similar result.}. In Fig.<font color='red'>图</font>, we showed the dialogue lengths from each gender for individual genre. Considering the variant dialogue lengths from movie to movie, genre to genre, here we showed the ratio of dialogue length instead of actual counts. For the same concerning, we calculate the ratio in each genre instead of each movie, though which we expect to balance out the fluctuation in the dialogue lengths in different movies. That is to say, the purple bars represent the ratio between male line numbers and total line numbers while the organge bars represent the ratio between female and total \footnote{Note here the total line numbers equal to male line numbers plus female line numbers, which don't include the lines spoken by characters without gender labels}.
 
-
-
-(slide) First, let’s look at the female and male dialogue length. We define the dialogue length as the number of lines. We also checked the definition as number of words and get similar result.
-
-Ratio = #male lines / # total lines
+The ratio between male line numbers and total line numbers from all genres, which is shown by the black dashed line, is above 0.7. Hence male characters dominate movie dialogues in general. This ratio is close to the ratio of male character numbers to the total character numbers.  
 
 ![Hypo1_lines](/Users/mac/Desktop/EmpiricalMethodsDS/Project/Draft/Hypo1_lines.png)
 
+For individual genre, we use orange bars to present female dialogue length ratio while use purple bars for male. One could see that male characters dominate movie dialogues in almost all genres \footnote{There is one peculiar genre, adult, which is denoted by the single orange bar and means only female characters are involved in the movie dialogue. However, as we showed in the genre distribution in Fig.<font color='red'>图</font>, there is only one adult movie in our analysis. So this result of all female dialogues may not be general.} with a minimum about 0.6 and maximum less than 0.9. The top three genres with highest female dialogue length ratio are horror, domumentary and romance (exclude adult) while those with highest male dialogue length ratio are history, war and animation. So this sub-hypothesis fails: the ratio of female dialogue length vary from genre to genre, but in general, females tend to have fewer lines than males. The female dialogue length ratio of drama is close to the averaged value of all genres while that of romance is higher than average, close to 0.4.
 
+#### 2.2 Females tend to have more significant conversation roles in dramatic and romantic movies and fewer in other genres.
 
-(slide, plot 1) In this plot, we show the dialogue length ratio of each gender, orange is female and purple is male. We could see that Male roles dominate movie dialogues in almost all genres, especially history. So history is really his story?
+In this sub-hypothesis, we examined what conversation roles female characters in movies are. Here we differed the conversation role as initiator and responder:initiator is defined as the first character of a conversation and responder is the second character of a conversation. We infered that the initiator is the more proactive role in one conversation and hence if there are more female conversation initiators than male in one movie, women have higher importance than men in that movie.
 
-Female roles have more lines in horror and romance movies than average, but not in drama.
-
-We would notice that there is an orange line represent all female lines, it’s adult. From previous genre distribution, we could see that adult only have one movie, so the result may not be general.
-
-
-
-(slide) Then we look at the conversation role. Here we differ the conversation role as initiator and responder. 
-
-Initiator is defined as the first character of a conversation and responder is the second character of a conversation.
-
-We infer that the initiator is the more proactive role in one conversation.
-
-Here we check four types of conversation: ff, fm, mf, and mm.
+Then there are four types of conversation: female-female, female-male, male-female and male-male, which are denoted by orange, nude, lavendar and  purple from top to bottom in Fig. <font color='red'>图</font>.
 
 ![Hypo2](/Users/mac/Desktop/EmpiricalMethodsDS/Project/Draft/Hypo2.png)
 
-(slide) similar to previous plot, male start (and respond to) most conversations
+Similar to previous plot, males started most conversations in movie dialogues with an initiate rate around 0.7, represented by the black dashed line. For most genres, the probability that males instead of females start conversations is higher. This may due to the fact that there are twice as many male characters of female characters and nearly half of the conversations are between males. 
 
-Female starts conversation more in adult, short and documentation, but may be outliers.
+As mentioned before, the adult genre only has one movie and only includes female diaglogues, it is not surprising that all conversations in that movie are classified female to female. In short and documentation, females start more conversations than male, this is mainly due to their high proportion of female-male conversations. Other than these two genres, males and females have close proportions to be conversation initiators for the conversations between two genders.
 
-No female-female conversations in history, adventure, war and animation.
+We would also like to point out that there are almost no female-female conversations in history and animation. A movie without conversations between two female characters is considered lack of female representation according to Bechdel test mentioned above\cite{bechdel1986dykes}. On the opposite, the top three genres with the highest proportion of female-female conversations are documentary, horror and western. Other than the conversation roles, we discussed the conversation content between different types of conversations in detail in Hypothesis 3. 
+
+So this sub-hypothesis is right 
 
 %%%%%%%%%%%%%%%%%%%
 
 ### Hypo 3
+
+Following previous hypothesis 
 
 (slide) Our third hypothesis is about the relationship between movie rating and female role importance.
 
